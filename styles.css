@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: boder-box;
+    font-family: "Besley" , serif;
+    border: none;
+    outline: none;
+    transition: 0.2s linear all;
+    text-decoration: none;
+
+}
+
+:root{
+    --main:#ff0720;
+    -box-shadow: 0.5rem 1rem 1.5rem rgba(0,0,0,0.7);
+    --border: 0.4rem solid var(--main);
+
+}
+*::selection{
+    background: var(--main);
+    color:#000;
+
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:9rem;
+    scroll-behavior:smooth;
+}
+section{
+    padding: 2rem 7%;
+}
+.btn{
+    display: inline-block;
+    color: var(--main);
+    cursor: pointer;
+    color: #fff;
+    padding: 0.9rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+.btn:hover{
+    letter-spacing: 0.2rem;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+}
+.heading span{
+    color: var(--main);
+}
+html::-webkit-scrollbar{
+    width: 10px;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main);
+}
+html::-webkit-scrollbar-track{
+    background: #000;
+}
+/* Header Start */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: var(--box-shadow);
+    background: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1.5rem 9%;
+}
+
+header .logo img{
+    height: 6rem;    
+}
+
+header .navbar a{
+  color: #fff;
+  margin-left: 2rem;
+  font-size: 1.7rem;
+}
+
+header .navbar a:hover{
+    color:var(--main);
+}
+
+#MenuBtn {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+
+}
+/* Header End */
+
+/* Home Section Starts*/
+.home{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url("images/header1.jpg") no-repeat;
+    min-height:100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    object-fit: cover;  
+}
+.home .content{
+    max-width: 60rem;
+    color: #fff;
+}
+.home .content h3{
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #ccc;
+    line-height: 1.8; 
+    padding: 1rem 0;
+} 
+/*Home Section Ends*/
+
+/*About us Section Start*/
+.about{
+    margin-bottom: 200px;
+}
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center; 
+}
+.about .row .img{
+    flex: 1 1 45rem;
+    padding: 1rem;
+}
+.about .row .content{
+    flex: 1 1 45rem;
+}
+.about img{
+    border: var(--border);
+    border-radius: 0.5rem;
+    width: 100%;
+}
+.about .row .content h3{
+    font-size: 3.5rem;
+}
+.about .row .content p{
+    line-height: 2;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+
+}
+/*About us Section End*/
+
+/* Services Section Start */
+.services{
+    margin-bottom: 200px;
+}
+.services .boxContainer{
+    display: flex;
+    grid-template-columns: repeat(auto-fit,minmax(27rem,1fr));
+    gap: 1rem;
+    
+}
+/* Services Section End */
+
+/*Media Query*/
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width:768px){
+    #MenuBtn {
+        display: initial;
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border: 0.2rem solid #222;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+    header .navbar.active{
+        clip-path: polygon(0 0,100% 0,100% 100%,0% 100%);
+    }
+    header .navbar a{
+        display: flex;
+        background: #333;
+        border-radius: 0.5rem;
+        margin: 1.3rem;
+        font-size: 2rem;
+        padding: 1.3rem; 
+    }
+
+    .home .content h3{
+        font-size: 3.5rem;   
+    }
+    .home .content p {
+        font-size: 1.5rem;
+
+    }
+}
+@media(max-width:450px){
+    html{
+    font-size: 50%;  
+}
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;   
+    }
+}
